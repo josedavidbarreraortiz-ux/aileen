@@ -137,9 +137,8 @@
     /* MARCO DE FOTO PERSONALIZABLE */
     .foto-marco {
       width: 100%;
-      min-height: 240px;
-      max-height: 360px;
-      background: #090614;
+      padding: 1.6rem 1rem 0.8rem;
+      background: radial-gradient(circle at center, #150d30 0%, #080512 100%);
       border-bottom: 1px solid rgba(139, 92, 246, 0.2);
       display: flex;
       align-items: center;
@@ -148,6 +147,7 @@
       overflow: hidden;
       cursor: pointer;
       transition: background 0.3s ease;
+      min-height: 220px;
     }
 
     .foto-marco:hover .foto-placeholder {
@@ -156,13 +156,21 @@
     }
 
     .foto-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
+      max-width: 94%;
+      max-height: 360px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(139, 92, 246, 0.25);
+      border: 1px solid rgba(168, 85, 247, 0.35);
       opacity: 0;
-      transition: opacity 0.8s ease;
+      transition: opacity 0.8s ease, transform 0.4s ease;
+      z-index: 2;
+    }
+
+    .foto-marco:hover .foto-img.cargada {
+      transform: scale(1.015);
     }
 
     .foto-img.cargada {
@@ -205,8 +213,8 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 60%;
-      background: linear-gradient(to top, rgba(12, 8, 24, 1), rgba(12, 8, 24, 0.4) 50%, transparent);
+      height: 25%;
+      background: linear-gradient(to top, rgba(12, 8, 24, 0.7), transparent);
       z-index: 3;
       pointer-events: none;
     }
