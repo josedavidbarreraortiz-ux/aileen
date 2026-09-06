@@ -137,17 +137,15 @@
     /* MARCO DE FOTO PERSONALIZABLE */
     .foto-marco {
       width: 100%;
-      padding: 1.6rem 1rem 0.8rem;
-      background: radial-gradient(circle at center, #150d30 0%, #080512 100%);
+      padding: 1.8rem 1rem 1.2rem;
+      background: radial-gradient(circle at center, #160d33 0%, #070410 100%);
       border-bottom: 1px solid rgba(139, 92, 246, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      overflow: hidden;
       cursor: pointer;
       transition: background 0.3s ease;
-      min-height: 220px;
     }
 
     .foto-marco:hover .foto-placeholder {
@@ -156,21 +154,23 @@
     }
 
     .foto-img {
-      max-width: 94%;
-      max-height: 360px;
+      max-height: 280px;
+      max-width: 85%;
       width: auto;
       height: auto;
       object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(139, 92, 246, 0.25);
-      border: 1px solid rgba(168, 85, 247, 0.35);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(139, 92, 246, 0.35);
+      border: 2px solid rgba(168, 85, 247, 0.4);
       opacity: 0;
       transition: opacity 0.8s ease, transform 0.4s ease;
       z-index: 2;
+      display: block;
+      margin: 0 auto;
     }
 
     .foto-marco:hover .foto-img.cargada {
-      transform: scale(1.015);
+      transform: scale(1.02);
     }
 
     .foto-img.cargada {
@@ -209,14 +209,7 @@
     }
 
     .foto-gradiente {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 25%;
-      background: linear-gradient(to top, rgba(12, 8, 24, 0.7), transparent);
-      z-index: 3;
-      pointer-events: none;
+      display: none;
     }
 
     /* CUERPO DE LA CARTA */
@@ -561,7 +554,12 @@
       }
 
       .foto-marco {
-        min-height: 220px;
+        padding: 1.2rem 0.6rem 0.8rem;
+      }
+
+      .foto-img {
+        max-height: 220px;
+        max-width: 90%;
       }
 
       .texto {
